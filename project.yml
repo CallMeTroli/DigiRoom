@@ -1,0 +1,61 @@
+name: DigiMoodle
+options:
+  bundleIdPrefix: com.digitech
+  xcodeVersion: "15.0"
+  deploymentTarget:
+    iOS: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: "Apple Development"
+
+targets:
+  DigiMoodle:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources
+    info:
+      path: Sources/Resources/Info.plist
+    settings:
+      base:
+        PRODUCT_NAME: DigiMoodle
+        PRODUCT_BUNDLE_IDENTIFIER: com.digitech.digimoodle
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_FILE: Sources/Resources/Info.plist
+        ENABLE_PREVIEWS: YES
+        ENABLE_TESTABILITY: YES
+        CODE_SIGN_STYLE: Automatic
+
+  DigiMoodleTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Tests
+    dependencies:
+      - target: DigiMoodle
+    settings:
+      base:
+        PRODUCT_NAME: DigiMoodleTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.digitech.digimoodletests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
+
+schemes:
+  DigiMoodle:
+    build:
+      targets:
+        DigiMoodle: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - DigiMoodleTests

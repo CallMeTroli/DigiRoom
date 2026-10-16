@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D245CB2B1A9551FC5B5221 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860607497A32D6555A56433E /* Assignment.swift */; };
+		0F7B21F06EA5C3A5FF44584E /* NotificationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA6847CFBC603445A5EAB95 /* NotificationSetting.swift */; };
+		109B8DEDD40C2E3267343322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B1BDF20ACF58C5DA29919 /* Assets.xcassets */; };
+		156D720A0849E6571E5671F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C80404A75C82C20D408BEF /* ContentView.swift */; };
+		21B8EA7DE5F8B585138EC85F /* GoogleClassroomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E67AE6B580C302F44E1387 /* GoogleClassroomTheme.swift */; };
+		28C24B63E291A5872A840F6C /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7265CB7EF39D253B1B349 /* MockDataService.swift */; };
+		2FB49AC587E90C3E4994B5C8 /* ClassroomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7246C877147F98F86D8A5A5E /* ClassroomViewModel.swift */; };
+		409825FACCAE2FA57D4514DB /* UserProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9DCC811AB57232F92F1A8B /* UserProfileSheet.swift */; };
+		4CA64FF1FE096B19A03BF4F7 /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF6CE685AB7AE2433EFF211 /* UserAvatarView.swift */; };
+		4D750816A73659EC3F516CEC /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B483C50CB0B1D3C7B94861 /* TodoListView.swift */; };
+		528C0CC47465E4021D9BA5F6 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84266EDDC619BBBDCFAE0D /* Announcement.swift */; };
+		5C448DA475CAB81BA23F7E1E /* MoodleDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A94BC2F5FF453D24C7E7F /* MoodleDTOs.swift */; };
+		65B8AA0F0949C84C2B63A38F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F9B7903DEE6228CB06107 /* LoginView.swift */; };
+		67290EE21ACC1461F82D0FAF /* MoodleAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44F3AB6AA1DB207CDB0F3E3 /* MoodleAPIService.swift */; };
+		6A317279B779F1B7FD804F59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89F7AE7CC907F81049F809 /* User.swift */; };
+		6A6314EE39623907F62FBB58 /* SideDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B151AF4D27830FE253FFEBA /* SideDrawerView.swift */; };
+		6D96CA211E7F273572249D75 /* AssignmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA9BF65785754DB53738E /* AssignmentDetailView.swift */; };
+		7161F1FB112CA9FA25818804 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4C331CFE415BBFA6CCEE1 /* CourseDetailView.swift */; };
+		78DB0E62DBFEA5B677BE3142 /* StreamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54470BC8761185962BCAEAB5 /* StreamTabView.swift */; };
+		795D06645B3D74438C1192FB /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5400CC192678929E3D5F3A05 /* NotificationManager.swift */; };
+		8A6415025DED03DD35A84403 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A8A5CA86864681EEA32336 /* NotificationViewModel.swift */; };
+		90D30FDFC60E7FBB222702DD /* CourseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B81B18306AC11B28585CD34 /* CourseCardView.swift */; };
+		9248293B3023450AF8B668BB /* DigiMoodleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33CDC434D6545C70F527E5B /* DigiMoodleApp.swift */; };
+		924A4DF42EC996BC5B1D81FD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F395648398A23BD15E492C1 /* StorageService.swift */; };
+		AB83EA82DC5B078B49639E7D /* ClassroomTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03101DE517B9DD4FD24B4DFC /* ClassroomTopBar.swift */; };
+		B6EB4415C4D59BD804E9D315 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D28CA8E44537245B10974 /* AuthViewModel.swift */; };
+		BF381A2F5FA5529D9A52D70D /* CoursesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51571D87CCCACA382EDD1376 /* CoursesListView.swift */; };
+		CABA8C6CC1B8B8F4DCB11214 /* DigiMoodleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EA20732655691B6CCE11A1 /* DigiMoodleTests.swift */; };
+		D0AC736DB5E51C47405757EF /* AssignmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F196745C09EF91B47C5C96 /* AssignmentRowView.swift */; };
+		E824DA104FD638BD391128E4 /* PeopleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9B033B60581412985FAE67 /* PeopleTabView.swift */; };
+		EA54DDD58DCF483BC9825B47 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE061D1790CCED7DDB633A8 /* Course.swift */; };
+		EBEE4951628EAD0856FFA477 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F55452B02E997D9EED30A9 /* NotificationSettingsView.swift */; };
+		FBFE0D846692BBFBC7AF5277 /* ClassworkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7CCAC5B1178A6F97ECBAB /* ClassworkTabView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8ED7A6C3A080F3391ACBFAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E23EB3022A773BD6F621848D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F7E82672F51DF2518E95FA;
+			remoteInfo = DigiMoodle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03101DE517B9DD4FD24B4DFC /* ClassroomTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomTopBar.swift; sourceTree = "<group>"; };
+		08E40E93F3157FFA6C633032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09C7CCAC5B1178A6F97ECBAB /* ClassworkTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassworkTabView.swift; sourceTree = "<group>"; };
+		0CA6847CFBC603445A5EAB95 /* NotificationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSetting.swift; sourceTree = "<group>"; };
+		271CA9BF65785754DB53738E /* AssignmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentDetailView.swift; sourceTree = "<group>"; };
+		28C80404A75C82C20D408BEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F395648398A23BD15E492C1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		34838E7D7C084C72AE9E859A /* DigiMoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiMoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		373D28CA8E44537245B10974 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		50B483C50CB0B1D3C7B94861 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		51571D87CCCACA382EDD1376 /* CoursesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListView.swift; sourceTree = "<group>"; };
+		5400CC192678929E3D5F3A05 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		54470BC8761185962BCAEAB5 /* StreamTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamTabView.swift; sourceTree = "<group>"; };
+		5D9B033B60581412985FAE67 /* PeopleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTabView.swift; sourceTree = "<group>"; };
+		7246C877147F98F86D8A5A5E /* ClassroomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomViewModel.swift; sourceTree = "<group>"; };
+		792F9B7903DEE6228CB06107 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		79F196745C09EF91B47C5C96 /* AssignmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentRowView.swift; sourceTree = "<group>"; };
+		7AE061D1790CCED7DDB633A8 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		860607497A32D6555A56433E /* Assignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		8B81B18306AC11B28585CD34 /* CourseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCardView.swift; sourceTree = "<group>"; };
+		8F1A94BC2F5FF453D24C7E7F /* MoodleDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodleDTOs.swift; sourceTree = "<group>"; };
+		98E67AE6B580C302F44E1387 /* GoogleClassroomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClassroomTheme.swift; sourceTree = "<group>"; };
+		9B151AF4D27830FE253FFEBA /* SideDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDrawerView.swift; sourceTree = "<group>"; };
+		9B2B1BDF20ACF58C5DA29919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5A8A5CA86864681EEA32336 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		AA78A4CE1E1C9D2BD1F4E00B /* DigiMoodleTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DigiMoodleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF7265CB7EF39D253B1B349 /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
+		B7A4C331CFE415BBFA6CCEE1 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
+		C33CDC434D6545C70F527E5B /* DigiMoodleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiMoodleApp.swift; sourceTree = "<group>"; };
+		CD84266EDDC619BBBDCFAE0D /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		CF89F7AE7CC907F81049F809 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DE9DCC811AB57232F92F1A8B /* UserProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSheet.swift; sourceTree = "<group>"; };
+		E3EA20732655691B6CCE11A1 /* DigiMoodleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiMoodleTests.swift; sourceTree = "<group>"; };
+		E9F55452B02E997D9EED30A9 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		EFF6CE685AB7AE2433EFF211 /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		F44F3AB6AA1DB207CDB0F3E3 /* MoodleAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodleAPIService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		157066B87CF71096C288C568 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B839E1ABB6A865FB6159A6CE /* App */,
+				820B03650C6D554064F1A4CA /* Models */,
+				338A9D03D51242990828B0B5 /* Resources */,
+				4F8E0791E2471C972A1A25FB /* Services */,
+				9D32607BC5237DCB21D6ACFA /* ViewModels */,
+				88D3F1BF42C84506651F75B0 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2DEC78AF8C5CCC4A423BFA9E /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				50B483C50CB0B1D3C7B94861 /* TodoListView.swift */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
+		338A9D03D51242990828B0B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B1BDF20ACF58C5DA29919 /* Assets.xcassets */,
+				08E40E93F3157FFA6C633032 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44350CE309AC412AA1B9796E = {
+			isa = PBXGroup;
+			children = (
+				157066B87CF71096C288C568 /* Sources */,
+				88BB757E68884528D6229524 /* Tests */,
+				BF80E8873501AE800335E0E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		448FCF3287DF7181C67956B3 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				271CA9BF65785754DB53738E /* AssignmentDetailView.swift */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		4F8E0791E2471C972A1A25FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADF7265CB7EF39D253B1B349 /* MockDataService.swift */,
+				F44F3AB6AA1DB207CDB0F3E3 /* MoodleAPIService.swift */,
+				5400CC192678929E3D5F3A05 /* NotificationManager.swift */,
+				2F395648398A23BD15E492C1 /* StorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		514E6A29EB5B0E05EC563FC8 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				79F196745C09EF91B47C5C96 /* AssignmentRowView.swift */,
+				09C7CCAC5B1178A6F97ECBAB /* ClassworkTabView.swift */,
+				B7A4C331CFE415BBFA6CCEE1 /* CourseDetailView.swift */,
+				5D9B033B60581412985FAE67 /* PeopleTabView.swift */,
+				54470BC8761185962BCAEAB5 /* StreamTabView.swift */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		6C713CD65609444A0763378E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				03101DE517B9DD4FD24B4DFC /* ClassroomTopBar.swift */,
+				98E67AE6B580C302F44E1387 /* GoogleClassroomTheme.swift */,
+				9B151AF4D27830FE253FFEBA /* SideDrawerView.swift */,
+				EFF6CE685AB7AE2433EFF211 /* UserAvatarView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8168C89BBBDFB53F4A1713A5 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				E9F55452B02E997D9EED30A9 /* NotificationSettingsView.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		820B03650C6D554064F1A4CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD84266EDDC619BBBDCFAE0D /* Announcement.swift */,
+				860607497A32D6555A56433E /* Assignment.swift */,
+				7AE061D1790CCED7DDB633A8 /* Course.swift */,
+				8F1A94BC2F5FF453D24C7E7F /* MoodleDTOs.swift */,
+				0CA6847CFBC603445A5EAB95 /* NotificationSetting.swift */,
+				CF89F7AE7CC907F81049F809 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88BB757E68884528D6229524 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E3EA20732655691B6CCE11A1 /* DigiMoodleTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		88D3F1BF42C84506651F75B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				448FCF3287DF7181C67956B3 /* Assignment */,
+				BE17120220D40790A445E422 /* Auth */,
+				6C713CD65609444A0763378E /* Common */,
+				514E6A29EB5B0E05EC563FC8 /* Course */,
+				A0A3343D9B1B4327DBDA4B13 /* Home */,
+				8168C89BBBDFB53F4A1713A5 /* Notifications */,
+				BDEA066767C7233EF5CB2171 /* Profile */,
+				2DEC78AF8C5CCC4A423BFA9E /* Todo */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D32607BC5237DCB21D6ACFA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				373D28CA8E44537245B10974 /* AuthViewModel.swift */,
+				7246C877147F98F86D8A5A5E /* ClassroomViewModel.swift */,
+				A5A8A5CA86864681EEA32336 /* NotificationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A0A3343D9B1B4327DBDA4B13 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8B81B18306AC11B28585CD34 /* CourseCardView.swift */,
+				51571D87CCCACA382EDD1376 /* CoursesListView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B839E1ABB6A865FB6159A6CE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				28C80404A75C82C20D408BEF /* ContentView.swift */,
+				C33CDC434D6545C70F527E5B /* DigiMoodleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BDEA066767C7233EF5CB2171 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE9DCC811AB57232F92F1A8B /* UserProfileSheet.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BE17120220D40790A445E422 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				792F9B7903DEE6228CB06107 /* LoginView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BF80E8873501AE800335E0E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34838E7D7C084C72AE9E859A /* DigiMoodle.app */,
+				AA78A4CE1E1C9D2BD1F4E00B /* DigiMoodleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2375DD764B30B8D3792E0309 /* DigiMoodleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41105F56A3497DBEE1A45273 /* Build configuration list for PBXNativeTarget "DigiMoodleTests" */;
+			buildPhases = (
+				C14EB3E19B428A2D1D156819 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32F272D764A59EDFBAE9800F /* PBXTargetDependency */,
+			);
+			name = DigiMoodleTests;
+			packageProductDependencies = (
+			);
+			productName = DigiMoodleTests;
+			productReference = AA78A4CE1E1C9D2BD1F4E00B /* DigiMoodleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4F7E82672F51DF2518E95FA /* DigiMoodle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE7C7AF068E7A5AA7145E37F /* Build configuration list for PBXNativeTarget "DigiMoodle" */;
+			buildPhases = (
+				E0F5B4C41AB8449C63A3C7EF /* Sources */,
+				E430CD74E3342183BABE6F20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigiMoodle;
+			packageProductDependencies = (
+			);
+			productName = DigiMoodle;
+			productReference = 34838E7D7C084C72AE9E859A /* DigiMoodle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E23EB3022A773BD6F621848D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					2375DD764B30B8D3792E0309 = {
+						ProvisioningStyle = Automatic;
+					};
+					E4F7E82672F51DF2518E95FA = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EFF07221216E583974852BAA /* Build configuration list for PBXProject "DigiMoodle" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 44350CE309AC412AA1B9796E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BF80E8873501AE800335E0E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4F7E82672F51DF2518E95FA /* DigiMoodle */,
+				2375DD764B30B8D3792E0309 /* DigiMoodleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E430CD74E3342183BABE6F20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				109B8DEDD40C2E3267343322 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C14EB3E19B428A2D1D156819 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABA8C6CC1B8B8F4DCB11214 /* DigiMoodleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0F5B4C41AB8449C63A3C7EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				528C0CC47465E4021D9BA5F6 /* Announcement.swift in Sources */,
+				05D245CB2B1A9551FC5B5221 /* Assignment.swift in Sources */,
+				6D96CA211E7F273572249D75 /* AssignmentDetailView.swift in Sources */,
+				D0AC736DB5E51C47405757EF /* AssignmentRowView.swift in Sources */,
+				B6EB4415C4D59BD804E9D315 /* AuthViewModel.swift in Sources */,
+				AB83EA82DC5B078B49639E7D /* ClassroomTopBar.swift in Sources */,
+				2FB49AC587E90C3E4994B5C8 /* ClassroomViewModel.swift in Sources */,
+				FBFE0D846692BBFBC7AF5277 /* ClassworkTabView.swift in Sources */,
+				156D720A0849E6571E5671F1 /* ContentView.swift in Sources */,
+				EA54DDD58DCF483BC9825B47 /* Course.swift in Sources */,
+				90D30FDFC60E7FBB222702DD /* CourseCardView.swift in Sources */,
+				7161F1FB112CA9FA25818804 /* CourseDetailView.swift in Sources */,
+				BF381A2F5FA5529D9A52D70D /* CoursesListView.swift in Sources */,
+				9248293B3023450AF8B668BB /* DigiMoodleApp.swift in Sources */,
+				21B8EA7DE5F8B585138EC85F /* GoogleClassroomTheme.swift in Sources */,
+				65B8AA0F0949C84C2B63A38F /* LoginView.swift in Sources */,
+				28C24B63E291A5872A840F6C /* MockDataService.swift in Sources */,
+				67290EE21ACC1461F82D0FAF /* MoodleAPIService.swift in Sources */,
+				5C448DA475CAB81BA23F7E1E /* MoodleDTOs.swift in Sources */,
+				795D06645B3D74438C1192FB /* NotificationManager.swift in Sources */,
+				0F7B21F06EA5C3A5FF44584E /* NotificationSetting.swift in Sources */,
+				EBEE4951628EAD0856FFA477 /* NotificationSettingsView.swift in Sources */,
+				8A6415025DED03DD35A84403 /* NotificationViewModel.swift in Sources */,
+				E824DA104FD638BD391128E4 /* PeopleTabView.swift in Sources */,
+				6A6314EE39623907F62FBB58 /* SideDrawerView.swift in Sources */,
+				924A4DF42EC996BC5B1D81FD /* StorageService.swift in Sources */,
+				78DB0E62DBFEA5B677BE3142 /* StreamTabView.swift in Sources */,
+				4D750816A73659EC3F516CEC /* TodoListView.swift in Sources */,
+				6A317279B779F1B7FD804F59 /* User.swift in Sources */,
+				4CA64FF1FE096B19A03BF4F7 /* UserAvatarView.swift in Sources */,
+				409825FACCAE2FA57D4514DB /* UserProfileSheet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		32F272D764A59EDFBAE9800F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F7E82672F51DF2518E95FA /* DigiMoodle */;
+			targetProxy = F8ED7A6C3A080F3391ACBFAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		62D9FBFFEABCEE0DA1D0C1D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QQKAEAKH9;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitech.digimoodle;
+				PRODUCT_NAME = DigiMoodle;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69BEC25D6181201A333DE331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81F8C3B3878A13D649D49A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QQKAEAKH9;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Sources/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitech.digimoodle;
+				PRODUCT_NAME = DigiMoodle;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D262CEC7D29B9E6267210E3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DD96A055F8A86E27E8F61287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitech.digimoodletests;
+				PRODUCT_NAME = DigiMoodleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiMoodle.app/DigiMoodle";
+			};
+			name = Release;
+		};
+		F3ACFE6CD09DA1642724ADB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitech.digimoodletests;
+				PRODUCT_NAME = DigiMoodleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DigiMoodle.app/DigiMoodle";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41105F56A3497DBEE1A45273 /* Build configuration list for PBXNativeTarget "DigiMoodleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3ACFE6CD09DA1642724ADB0 /* Debug */,
+				DD96A055F8A86E27E8F61287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DE7C7AF068E7A5AA7145E37F /* Build configuration list for PBXNativeTarget "DigiMoodle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62D9FBFFEABCEE0DA1D0C1D7 /* Debug */,
+				81F8C3B3878A13D649D49A05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFF07221216E583974852BAA /* Build configuration list for PBXProject "DigiMoodle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69BEC25D6181201A333DE331 /* Debug */,
+				D262CEC7D29B9E6267210E3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E23EB3022A773BD6F621848D /* Project object */;
+}

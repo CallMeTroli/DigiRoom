@@ -1,0 +1,8 @@
+{
+  "name": "digimoodle-web-companion",
+  "version": "1.0.0",
+  "description": "Google Classroom Mobile iOS companion for Digitech FP Campus",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
