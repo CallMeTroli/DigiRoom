@@ -1,8 +1,4 @@
-# DigiMoodle · Google Classroom iOS Client para Campus Digitech FP
-
-<p align="center">
-  <img src="https://campus.digitechfp.com/pluginfile.php/1/theme_boost_union/additionalresources/0/digitech-logo-full-white.png" alt="Digitech FP" width="280" style="background: #0f172a; padding: 12px; border-radius: 8px;">
-</p>
+# DigiMoodle · Google Classroom iOS Client para Campus Digitech FP · Hecho en Antigravity con Gemini 3.8 Flash
 
 Aplicación nativa para **iOS (iPhone e iPad)** con diseño idéntico a la interfaz móvil de **Google Classroom**, conectada directamente con la base de datos y servicios web del campus virtual de Digitech FP ([https://campus.digitechfp.com](https://campus.digitechfp.com)), dotada de inicio de sesión seguro y un **sistema de notificaciones altamente personalizable** (con recordatorios automáticos **2 días antes** de la entrega de tareas o ajustado a la medida de cada alumno).
 
