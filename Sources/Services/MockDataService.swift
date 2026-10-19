@@ -253,4 +253,141 @@ public final class MockDataService {
             ]
         }
     }
+
+    public func getDemoConversations(currentUserId: Int = 9942) -> [MoodleConversation] {
+        let calendar = Calendar.current
+        let now = Date()
+
+        return [
+            MoodleConversation(
+                id: 801,
+                name: "Prof. Alejandro Ruiz",
+                subtitle: "Programación Multimedia y Dispositivos Móviles",
+                partnerId: 401,
+                isGroup: false,
+                isOnline: true,
+                unreadCount: 2,
+                messages: [
+                    MoodleChatMessage(
+                        id: 9001,
+                        senderId: 401,
+                        senderName: "Prof. Alejandro Ruiz",
+                        text: "¡Hola Álex! ¿Cómo llevas la integración con la API REST de Moodle para la Práctica 3?",
+                        date: calendar.date(byAdding: .hour, value: -3, to: now)!,
+                        isFromCurrentUser: false
+                    ),
+                    MoodleChatMessage(
+                        id: 9002,
+                        senderId: currentUserId,
+                        senderName: "Tú",
+                        text: "¡Hola profesor! Ya tengo funcionando el login con token y las notificaciones a medida.",
+                        date: calendar.date(byAdding: .hour, value: -2, to: now)!,
+                        isFromCurrentUser: true
+                    ),
+                    MoodleChatMessage(
+                        id: 9003,
+                        senderId: 401,
+                        senderName: "Prof. Alejandro Ruiz",
+                        text: "¡Excelente! Recuerda incluir también la vista de mensajería de Moodle (core_message).",
+                        date: calendar.date(byAdding: .minute, value: -25, to: now)!,
+                        isFromCurrentUser: false
+                    ),
+                    MoodleChatMessage(
+                        id: 9004,
+                        senderId: 401,
+                        senderName: "Prof. Alejandro Ruiz",
+                        text: "Cualquier duda con el certificado de Xcode me comentas por aquí.",
+                        date: calendar.date(byAdding: .minute, value: -20, to: now)!,
+                        isFromCurrentUser: false
+                    )
+                ],
+                themeColorHex: "#1A73E8"
+            ),
+            MoodleConversation(
+                id: 802,
+                name: "Grupo DAM 2º - Proyecto Integrado",
+                subtitle: "Grupo del curso (24 miembros)",
+                partnerId: nil,
+                isGroup: true,
+                isOnline: true,
+                unreadCount: 1,
+                messages: [
+                    MoodleChatMessage(
+                        id: 9010,
+                        senderId: 501,
+                        senderName: "Elena Cano",
+                        text: "Chicos, ¿a qué hora cerraba el Sprint 2 de Desarrollo de Interfaces?",
+                        date: calendar.date(byAdding: .hour, value: -5, to: now)!,
+                        isFromCurrentUser: false
+                    ),
+                    MoodleChatMessage(
+                        id: 9011,
+                        senderId: currentUserId,
+                        senderName: "Tú",
+                        text: "Cierra mañana, me acaba de saltar la notificación en DigiRoom.",
+                        date: calendar.date(byAdding: .hour, value: -4, to: now)!,
+                        isFromCurrentUser: true
+                    ),
+                    MoodleChatMessage(
+                        id: 9012,
+                        senderId: 502,
+                        senderName: "Marcos Torres",
+                        text: "¡Genial! Acabo de subir la parte de los componentes Material Design al repositorio.",
+                        date: calendar.date(byAdding: .minute, value: -45, to: now)!,
+                        isFromCurrentUser: false
+                    )
+                ],
+                themeColorHex: "#137333"
+            ),
+            MoodleConversation(
+                id: 803,
+                name: "Profª. Laura Gómez",
+                subtitle: "Desarrollo de Interfaces (DAM 2º)",
+                partnerId: 402,
+                isGroup: false,
+                isOnline: false,
+                unreadCount: 0,
+                messages: [
+                    MoodleChatMessage(
+                        id: 9020,
+                        senderId: 402,
+                        senderName: "Profª. Laura Gómez",
+                        text: "Hola Álex, he revisado tu boceto del menú lateral estilo Classroom y cumple genial con las guías de usabilidad.",
+                        date: calendar.date(byAdding: .day, value: -1, to: now)!,
+                        isFromCurrentUser: false
+                    ),
+                    MoodleChatMessage(
+                        id: 9021,
+                        senderId: currentUserId,
+                        senderName: "Tú",
+                        text: "¡Muchas gracias Laura! Mañana subo la versión final.",
+                        date: calendar.date(byAdding: .day, value: -1, to: now)!,
+                        isFromCurrentUser: true
+                    )
+                ],
+                themeColorHex: "#E37400"
+            ),
+            MoodleConversation(
+                id: 804,
+                name: "Prof. Javier Morales",
+                subtitle: "Acceso a Datos (DAM 2º)",
+                partnerId: 403,
+                isGroup: false,
+                isOnline: true,
+                unreadCount: 0,
+                messages: [
+                    MoodleChatMessage(
+                        id: 9030,
+                        senderId: 403,
+                        senderName: "Prof. Javier Morales",
+                        text: "El servidor de pruebas para las consultas REST de Moodle ya está activo en el campus.",
+                        date: calendar.date(byAdding: .day, value: -2, to: now)!,
+                        isFromCurrentUser: false
+                    )
+                ],
+                themeColorHex: "#9334E6"
+            )
+        ]
+    }
 }
+

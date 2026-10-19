@@ -1,0 +1,171 @@
+{
+  "" : {
+    "const-values" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.swiftconstvalues",
+    "dependencies" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.d",
+    "diagnostics" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.dia",
+    "emit-module-dependencies" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary-emit-module.dia",
+    "pch" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.swiftdeps"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/App/ContentView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/App/DigiMoodleApp.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodleApp.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodleApp.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodleApp.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/Announcement.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Announcement.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Announcement.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Announcement.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/Assignment.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Assignment.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Assignment.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Assignment.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/Course.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Course.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Course.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/Course.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/MoodleDTOs.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleDTOs.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleDTOs.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleDTOs.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/NotificationSetting.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSetting.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSetting.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSetting.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/User.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/User.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/User.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/User.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Services/MockDataService.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MockDataService.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MockDataService.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MockDataService.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Services/MoodleAPIService.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleAPIService.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleAPIService.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/MoodleAPIService.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Services/NotificationManager.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationManager.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationManager.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationManager.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Services/StorageService.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StorageService.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StorageService.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StorageService.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/ViewModels/AuthViewModel.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AuthViewModel.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AuthViewModel.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AuthViewModel.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/ViewModels/ClassroomViewModel.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomViewModel.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomViewModel.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomViewModel.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/ViewModels/NotificationViewModel.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationViewModel.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationViewModel.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationViewModel.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Assignment/AssignmentDetailView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentDetailView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentDetailView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentDetailView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Auth/LoginView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/LoginView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Common/ClassroomTopBar.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomTopBar.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomTopBar.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassroomTopBar.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Common/GoogleClassroomTheme.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GoogleClassroomTheme.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GoogleClassroomTheme.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GoogleClassroomTheme.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Common/SideDrawerView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/SideDrawerView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/SideDrawerView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/SideDrawerView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Common/UserAvatarView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserAvatarView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserAvatarView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserAvatarView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Course/AssignmentRowView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentRowView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentRowView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/AssignmentRowView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Course/ClassworkTabView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassworkTabView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassworkTabView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/ClassworkTabView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Course/CourseDetailView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseDetailView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseDetailView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseDetailView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Course/PeopleTabView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/PeopleTabView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/PeopleTabView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/PeopleTabView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Course/StreamTabView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StreamTabView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StreamTabView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/StreamTabView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Home/CourseCardView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseCardView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseCardView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CourseCardView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Home/CoursesListView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CoursesListView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CoursesListView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/CoursesListView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Notifications/NotificationSettingsView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSettingsView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSettingsView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/NotificationSettingsView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Profile/UserProfileSheet.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserProfileSheet.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserProfileSheet.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/UserProfileSheet.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Views/Todo/TodoListView.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/TodoListView.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/TodoListView.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/TodoListView.o"
+  },
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

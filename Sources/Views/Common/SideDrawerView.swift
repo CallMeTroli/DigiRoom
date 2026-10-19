@@ -4,9 +4,11 @@ public struct SideDrawerView: View {
     @Binding public var isOpen: Bool
     public let user: User?
     public let courses: [Course]
+    public let unreadChatCount: Int
     public let onSelectCourse: (Course) -> Void
     public let onSelectClasses: () -> Void
     public let onSelectTodoList: () -> Void
+    public let onSelectChats: () -> Void
     public let onSelectNotifications: () -> Void
     public let onLogout: () -> Void
 
@@ -14,18 +16,22 @@ public struct SideDrawerView: View {
         isOpen: Binding<Bool>,
         user: User?,
         courses: [Course],
+        unreadChatCount: Int = 0,
         onSelectCourse: @escaping (Course) -> Void,
         onSelectClasses: @escaping () -> Void = {},
         onSelectTodoList: @escaping () -> Void,
+        onSelectChats: @escaping () -> Void = {},
         onSelectNotifications: @escaping () -> Void,
         onLogout: @escaping () -> Void
     ) {
         self._isOpen = isOpen
         self.user = user
         self.courses = courses
+        self.unreadChatCount = unreadChatCount
         self.onSelectCourse = onSelectCourse
         self.onSelectClasses = onSelectClasses
         self.onSelectTodoList = onSelectTodoList
+        self.onSelectChats = onSelectChats
         self.onSelectNotifications = onSelectNotifications
         self.onLogout = onLogout
     }
@@ -85,6 +91,16 @@ public struct SideDrawerView: View {
                             ) {
                                 withAnimation { isOpen = false }
                                 onSelectTodoList()
+                            }
+
+                            drawerItem(
+                                icon: "bubble.left.and.bubble.right.fill",
+                                title: "Chats de Moodle",
+                                isSelected: false,
+                                badgeCount: unreadChatCount
+                            ) {
+                                withAnimation { isOpen = false }
+                                onSelectChats()
                             }
 
                             drawerItem(
@@ -180,6 +196,7 @@ public struct SideDrawerView: View {
         title: String,
         isSelected: Bool = false,
         iconColor: Color? = nil,
+        badgeCount: Int = 0,
         action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
@@ -194,6 +211,16 @@ public struct SideDrawerView: View {
                     .foregroundColor(isSelected ? GoogleClassroomTheme.blue : GoogleClassroomTheme.textPrimary)
 
                 Spacer()
+
+                if badgeCount > 0 {
+                    Text("\(badgeCount)")
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 7)
+                        .padding(.vertical, 2)
+                        .background(GoogleClassroomTheme.blue)
+                        .clipShape(Capsule())
+                }
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 12)
@@ -204,3 +231,4 @@ public struct SideDrawerView: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
+

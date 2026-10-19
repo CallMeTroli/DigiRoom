@@ -266,6 +266,210 @@ public final class MoodleAPIService {
         return topics
     }
 
+    // MARK: - Moodle Chats / Conversations (core_message_*)
+    public func fetchConversations(token: String, userId: Int) async throws -> [MoodleConversation] {
+        let responseData = try await callWebService(
+            function: "core_message_get_conversations",
+            token: token,
+            parameters: [
+                "userid": String(userId),
+                "limitfrom": "0",
+                "limitnum": "50"
+            ]
+        )
+
+        let decoded: MoodleConversationsResponse
+        do {
+            decoded = try JSONDecoder().decode(MoodleConversationsResponse.self, from: responseData)
+        } catch {
+            throw MoodleAPIError.parsingError("Error al procesar los chats de Moodle")
+        }
+
+        var conversations: [MoodleConversation] = []
+        guard let dtos = decoded.conversations else { return [] }
+
+        for (index, dto) in dtos.enumerated() {
+            let otherMember = dto.members?.first(where: { $0.id != userId }) ?? dto.members?.first
+            let displayName: String
+            if let dtoName = dto.name, !dtoName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                displayName = dtoName
+            } else if let memberName = otherMember?.fullname, !memberName.isEmpty {
+                displayName = memberName
+            } else {
+                displayName = "Chat de Moodle #\(dto.id)"
+            }
+
+            let subtitle: String
+            if let sub = dto.subname, !sub.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                subtitle = sub
+            } else if dto.type == 2 {
+                subtitle = "Grupo del curso (\(dto.membercount ?? 0) miembros)"
+            } else {
+                subtitle = "Mensajería directa Moodle"
+            }
+
+            var mappedMessages: [MoodleChatMessage] = []
+            if let msgDTOs = dto.messages {
+                // Moodle returns newest messages first in conversation summary; sort oldest to newest
+                let sortedDTOs = msgDTOs.sorted { ($0.timecreated ?? 0) < ($1.timecreated ?? 0) }
+                for m in sortedDTOs {
+                    let fromId = m.useridfrom ?? 0
+                    let senderName = fromId == userId
+                        ? "Tú"
+                        : (dto.members?.first(where: { $0.id == fromId })?.fullname ?? displayName)
+                    let msgDate = m.timecreated.map { Date(timeIntervalSince1970: TimeInterval($0)) } ?? Date()
+                    mappedMessages.append(
+                        MoodleChatMessage(
+                            id: m.id,
+                            senderId: fromId,
+                            senderName: senderName,
+                            text: cleanHTML(m.text ?? ""),
+                            date: msgDate,
+                            isFromCurrentUser: fromId == userId
+                        )
+                    )
+                }
+            }
+
+            let colorHex = classroomPalette[index % classroomPalette.count]
+            let conv = MoodleConversation(
+                id: dto.id,
+                name: displayName,
+                subtitle: subtitle,
+                partnerId: otherMember?.id,
+                isGroup: (dto.type == 2),
+                isOnline: otherMember?.isonline ?? false,
+                unreadCount: dto.unreadcount ?? ((dto.isread == false) ? 1 : 0),
+                messages: mappedMessages,
+                themeColorHex: colorHex
+            )
+            conversations.append(conv)
+        }
+
+        return conversations
+    }
+
+    public func fetchConversationMessages(token: String, userId: Int, conversationId: Int) async throws -> [MoodleChatMessage] {
+        let responseData = try await callWebService(
+            function: "core_message_get_conversation_messages",
+            token: token,
+            parameters: [
+                "currentuserid": String(userId),
+                "convid": String(conversationId),
+                "limitfrom": "0",
+                "limitnum": "50",
+                "newest": "1"
+            ]
+        )
+
+        let decoded: MoodleConversationMessagesResponse
+        do {
+            decoded = try JSONDecoder().decode(MoodleConversationMessagesResponse.self, from: responseData)
+        } catch {
+            throw MoodleAPIError.parsingError("No se pudieron cargar los mensajes de la conversación")
+        }
+
+        let members = decoded.members ?? []
+        let rawMessages = decoded.messages ?? []
+        let sorted = rawMessages.sorted { ($0.timecreated ?? 0) < ($1.timecreated ?? 0) }
+
+        return sorted.map { m in
+            let fromId = m.useridfrom ?? 0
+            let senderName = fromId == userId
+                ? "Tú"
+                : (members.first(where: { $0.id == fromId })?.fullname ?? "Usuario Moodle")
+            let date = m.timecreated.map { Date(timeIntervalSince1970: TimeInterval($0)) } ?? Date()
+            return MoodleChatMessage(
+                id: m.id,
+                senderId: fromId,
+                senderName: senderName,
+                text: cleanHTML(m.text ?? ""),
+                date: date,
+                isFromCurrentUser: fromId == userId
+            )
+        }
+    }
+
+    public func sendChatMessage(
+        token: String,
+        userId: Int,
+        conversationId: Int,
+        partnerId: Int?,
+        text: String
+    ) async throws -> MoodleChatMessage {
+        // Primary: core_message_send_messages_to_conversation
+        do {
+            let responseData = try await callWebService(
+                function: "core_message_send_messages_to_conversation",
+                token: token,
+                parameters: [
+                    "conversationid": String(conversationId),
+                    "messages[0][text]": text,
+                    "messages[0][textformat]": "1"
+                ]
+            )
+            if let sentList = try? JSONDecoder().decode([MoodleSentMessageDTO].self, from: responseData),
+               let first = sentList.first {
+                let date = first.timecreated.map { Date(timeIntervalSince1970: TimeInterval($0)) } ?? Date()
+                return MoodleChatMessage(
+                    id: first.id ?? Int.random(in: 100000...999999),
+                    senderId: userId,
+                    senderName: "Tú",
+                    text: cleanHTML(first.text ?? text),
+                    date: date,
+                    isFromCurrentUser: true
+                )
+            }
+        } catch {
+            // Fallback to core_message_send_instant_messages if partnerId is available
+            if let partnerId = partnerId {
+                let responseData = try await callWebService(
+                    function: "core_message_send_instant_messages",
+                    token: token,
+                    parameters: [
+                        "messages[0][touserid]": String(partnerId),
+                        "messages[0][text]": text,
+                        "messages[0][textformat]": "1"
+                    ]
+                )
+                if let sentList = try? JSONDecoder().decode([MoodleSentMessageDTO].self, from: responseData),
+                   let first = sentList.first {
+                    if let errorMsg = first.errormessage, !errorMsg.isEmpty {
+                        throw MoodleAPIError.serverError(errorMsg)
+                    }
+                    return MoodleChatMessage(
+                        id: first.msgid ?? Int.random(in: 100000...999999),
+                        senderId: userId,
+                        senderName: "Tú",
+                        text: text,
+                        date: Date(),
+                        isFromCurrentUser: true
+                    )
+                }
+            }
+            throw error
+        }
+
+        return MoodleChatMessage(
+            senderId: userId,
+            senderName: "Tú",
+            text: text,
+            date: Date(),
+            isFromCurrentUser: true
+        )
+    }
+
+    public func markConversationAsRead(token: String, userId: Int, conversationId: Int) async {
+        _ = try? await callWebService(
+            function: "core_message_mark_all_conversation_messages_as_read",
+            token: token,
+            parameters: [
+                "userid": String(userId),
+                "conversationid": String(conversationId)
+            ]
+        )
+    }
+
     // MARK: - Core Helper
     private func callWebService(
         function: String,

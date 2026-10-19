@@ -1,4 +1,4 @@
-import { DEMO_USER, DEMO_COURSES, DEMO_ANNOUNCEMENTS, DEMO_TOPICS } from "./demo-data.js";
+import { DEMO_USER, DEMO_COURSES, DEMO_ANNOUNCEMENTS, DEMO_TOPICS, DEMO_CONVERSATIONS } from "./demo-data.js";
 import { MoodleAPI } from "./moodle-api.js";
 import { NotificationSystem } from "./notifications.js";
 
@@ -9,6 +9,8 @@ class App {
 
     this.currentUser = null;
     this.courses = [];
+    this.conversations = JSON.parse(JSON.stringify(DEMO_CONVERSATIONS));
+    this.activeConversation = null;
     this.activeCourse = null;
     this.activeAssignment = null;
     this.activeTab = "stream";
@@ -48,6 +50,17 @@ class App {
       this.showView("todo");
       this.renderTodoList();
     });
+    document.getElementById("nav-chats")?.addEventListener("click", () => {
+      this.toggleDrawer(false);
+      this.activeConversation = null;
+      this.showView("chats");
+      this.renderChatsView();
+    });
+    document.getElementById("btn-top-chat")?.addEventListener("click", () => {
+      this.activeConversation = null;
+      this.showView("chats");
+      this.renderChatsView();
+    });
     document.getElementById("nav-notifications")?.addEventListener("click", () => {
       this.toggleDrawer(false);
       this.showView("notifications");
@@ -78,6 +91,14 @@ class App {
       }
     });
     document.getElementById("btn-back-todo")?.addEventListener("click", () => this.showView("courses"));
+    document.getElementById("btn-back-chats")?.addEventListener("click", () => {
+      if (this.activeConversation) {
+        this.activeConversation = null;
+        this.renderChatsView();
+      } else {
+        this.showView("courses");
+      }
+    });
     document.getElementById("btn-back-notifications")?.addEventListener("click", () => this.showView("courses"));
 
     // Course Bottom Tabs
@@ -120,12 +141,14 @@ class App {
     const topBar = document.getElementById("app-top-bar");
     const courseBar = document.getElementById("course-top-bar");
     const todoBar = document.getElementById("todo-top-bar");
+    const chatsBar = document.getElementById("chats-top-bar");
     const notifBar = document.getElementById("notif-top-bar");
     const bottomNav = document.getElementById("course-bottom-nav");
 
     topBar.style.display = "none";
     courseBar.style.display = "none";
     todoBar.style.display = "none";
+    if (chatsBar) chatsBar.style.display = "none";
     notifBar.style.display = "none";
     bottomNav.style.display = "none";
 
@@ -138,6 +161,8 @@ class App {
       this.renderCourseDetail();
     } else if (viewName === "todo") {
       todoBar.style.display = "flex";
+    } else if (viewName === "chats") {
+      if (chatsBar) chatsBar.style.display = "flex";
     } else if (viewName === "notifications") {
       notifBar.style.display = "flex";
     }
@@ -173,8 +198,9 @@ class App {
     this.currentUser = DEMO_USER;
     localStorage.setItem("digimoodle_user", JSON.stringify(DEMO_USER));
     this.courses = JSON.parse(JSON.stringify(DEMO_COURSES));
+    this.conversations = JSON.parse(JSON.stringify(DEMO_CONVERSATIONS));
     this.showView("courses");
-    this.showToast("Modo Demo activo: 5 asignaturas de Digitech FP DAM");
+    this.showToast("Modo Demo activo: 5 asignaturas y chats de Moodle");
   }
 
   logout() {
@@ -187,8 +213,10 @@ class App {
   loadCourses() {
     if (this.currentUser?.isDemo) {
       this.courses = JSON.parse(JSON.stringify(DEMO_COURSES));
+      this.conversations = JSON.parse(JSON.stringify(DEMO_CONVERSATIONS));
     } else {
       this.courses = JSON.parse(JSON.stringify(DEMO_COURSES));
+      this.conversations = JSON.parse(JSON.stringify(DEMO_CONVERSATIONS));
     }
     this.renderDrawerCourses();
   }
@@ -697,6 +725,105 @@ class App {
     alert(`Campus Virtual Digitech FP\nUsuario: ${this.currentUser?.fullname || "Álex Navarro"}\nExpediente: DAM 2º Oficial\nServidor: https://campus.digitechfp.com`);
   }
 
+  renderChatsView() {
+    const container = document.getElementById("chats-body");
+    const headerTitle = document.getElementById("chats-header-title");
+    if (!container) return;
+
+    if (this.activeConversation) {
+      if (headerTitle) headerTitle.innerText = this.activeConversation.name;
+      container.innerHTML = `
+        <div style="display: flex; flex-direction: column; height: calc(100vh - 140px); max-height: 640px;">
+          <div style="text-align: center; padding: 8px; background: #E8F0FE; font-size: 11px; color: #1967D2; font-weight: 500;">
+            Chat sincronizado con Moodle (campus.digitechfp.com)
+          </div>
+          <div id="chat-messages-scroll" style="flex: 1; overflow-y: auto; padding: 14px; background: var(--gc-secondary-bg); display: flex; flex-direction: column; gap: 10px;">
+            ${this.activeConversation.messages.map(m => `
+              <div style="display: flex; flex-direction: column; align-items: ${m.isFromCurrentUser ? "flex-end" : "flex-start"};">
+                ${this.activeConversation.isGroup && !m.isFromCurrentUser ? `<span style="font-size: 11px; font-weight: 600; color: ${this.activeConversation.themeColor}; margin-bottom: 2px;">${m.senderName}</span>` : ""}
+                <div style="max-width: 78%; padding: 10px 14px; border-radius: 16px; font-size: 13.5px; line-height: 1.4; background: ${m.isFromCurrentUser ? "var(--gc-blue)" : "white"}; color: ${m.isFromCurrentUser ? "white" : "var(--gc-text-primary)"}; border: ${m.isFromCurrentUser ? "none" : "1px solid var(--gc-card-border)"};">
+                  ${m.text}
+                </div>
+                <span style="font-size: 10px; color: var(--gc-text-tertiary); margin-top: 3px;">${m.time}</span>
+              </div>
+            `).join("")}
+          </div>
+          <form id="chat-send-form" style="display: flex; gap: 8px; padding: 10px 12px; background: white; border-top: 1px solid var(--gc-divider);">
+            <input type="text" id="chat-input-text" placeholder="Escribe un mensaje en Moodle..." style="flex: 1; padding: 10px 14px; border-radius: 20px; border: 1px solid var(--gc-card-border); background: var(--gc-secondary-bg); font-size: 13.5px;">
+            <button type="submit" style="width: 38px; height: 38px; border-radius: 50%; border: none; background: var(--gc-blue); color: white; font-weight: 700; cursor: pointer;">➤</button>
+          </form>
+        </div>
+      `;
+
+      const scrollBox = document.getElementById("chat-messages-scroll");
+      if (scrollBox) scrollBox.scrollTop = scrollBox.scrollHeight;
+
+      document.getElementById("chat-send-form")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.sendChatMessage();
+      });
+      return;
+    }
+
+    if (headerTitle) headerTitle.innerText = "Chats de Moodle";
+    container.innerHTML = `
+      <div style="background: white;">
+        ${this.conversations.map(conv => {
+          const lastMsg = conv.messages[conv.messages.length - 1];
+          return `
+            <div onclick="window.app.openConversation(${conv.id})" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--gc-divider); cursor: pointer;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: ${conv.themeColor}; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0;">
+                ${conv.initials}
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 14.5px; font-weight: ${conv.unreadCount > 0 ? "700" : "600"}; color: var(--gc-text-primary);">${conv.name}</span>
+                  <span style="font-size: 11px; color: var(--gc-text-tertiary);">${lastMsg?.time || ""}</span>
+                </div>
+                <div style="font-size: 11.5px; font-weight: 500; color: ${conv.themeColor}; margin: 2px 0;">${conv.subtitle}</div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 13px; color: var(--gc-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${lastMsg?.text || ""}</span>
+                  ${conv.unreadCount > 0 ? `<span style="background: var(--gc-blue); color: white; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;">${conv.unreadCount}</span>` : ""}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    `;
+  }
+
+  openConversation(id) {
+    const conv = this.conversations.find(c => c.id === id);
+    if (!conv) return;
+    conv.unreadCount = 0;
+    this.activeConversation = conv;
+    this.renderChatsView();
+  }
+
+  async sendChatMessage() {
+    const input = document.getElementById("chat-input-text");
+    const text = input?.value?.trim();
+    if (!text || !this.activeConversation) return;
+    input.value = "";
+
+    const nowTime = new Date().toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" });
+    this.activeConversation.messages.push({
+      id: Date.now(),
+      senderName: "Tú",
+      text,
+      time: nowTime,
+      isFromCurrentUser: true
+    });
+    this.renderChatsView();
+
+    if (this.currentUser && !this.currentUser.isDemo) {
+      try {
+        await this.api.sendMessageToConversation(this.currentUser.token, this.activeConversation.id, text);
+      } catch (e) {}
+    }
+  }
+
   showToast(message) {
     const toast = document.getElementById("toast");
     if (!toast) return;
@@ -707,3 +834,4 @@ class App {
 }
 
 window.app = new App();
+

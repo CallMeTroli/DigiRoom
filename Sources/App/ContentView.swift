@@ -37,7 +37,16 @@ public struct ContentView: View {
         ZStack(alignment: .leading) {
             VStack(spacing: 0) {
                 // Main Screen Content
-                if classroomViewModel.showTodoList {
+                if classroomViewModel.showChats {
+                    MoodleChatListView(
+                        viewModel: classroomViewModel,
+                        user: authViewModel.currentUser,
+                        onBack: {
+                            classroomViewModel.selectedConversation = nil
+                            classroomViewModel.showChats = false
+                        }
+                    )
+                } else if classroomViewModel.showTodoList {
                     TodoListView(
                         viewModel: classroomViewModel,
                         onBack: { classroomViewModel.showTodoList = false },
@@ -72,10 +81,16 @@ public struct ContentView: View {
                             title: "Google Classroom",
                             subtitle: "Digitech FP Oficial",
                             showBackButton: false,
+                            unreadChatCount: classroomViewModel.totalUnreadChatCount,
                             onMenuTapped: {
                                 withAnimation(.easeInOut(duration: 0.25)) {
                                     classroomViewModel.isSideDrawerOpen = true
                                 }
+                            },
+                            onChatTapped: {
+                                classroomViewModel.showTodoList = false
+                                classroomViewModel.showNotificationSettings = false
+                                classroomViewModel.showChats = true
                             },
                             onAvatarTapped: {
                                 classroomViewModel.showProfileSheet = true
@@ -98,22 +113,33 @@ public struct ContentView: View {
                 isOpen: $classroomViewModel.isSideDrawerOpen,
                 user: authViewModel.currentUser,
                 courses: classroomViewModel.courses,
+                unreadChatCount: classroomViewModel.totalUnreadChatCount,
                 onSelectCourse: { course in
                     classroomViewModel.showTodoList = false
                     classroomViewModel.showNotificationSettings = false
+                    classroomViewModel.showChats = false
                     classroomViewModel.selectCourse(course)
                 },
                 onSelectClasses: {
                     classroomViewModel.selectedCourse = nil
                     classroomViewModel.showTodoList = false
                     classroomViewModel.showNotificationSettings = false
+                    classroomViewModel.showChats = false
                 },
                 onSelectTodoList: {
                     classroomViewModel.showNotificationSettings = false
+                    classroomViewModel.showChats = false
                     classroomViewModel.showTodoList = true
+                },
+                onSelectChats: {
+                    classroomViewModel.showTodoList = false
+                    classroomViewModel.showNotificationSettings = false
+                    classroomViewModel.selectedConversation = nil
+                    classroomViewModel.showChats = true
                 },
                 onSelectNotifications: {
                     classroomViewModel.showTodoList = false
+                    classroomViewModel.showChats = false
                     classroomViewModel.showNotificationSettings = true
                 },
                 onLogout: {
@@ -121,6 +147,7 @@ public struct ContentView: View {
                     classroomViewModel.selectedCourse = nil
                     classroomViewModel.showTodoList = false
                     classroomViewModel.showNotificationSettings = false
+                    classroomViewModel.showChats = false
                 }
             )
         }

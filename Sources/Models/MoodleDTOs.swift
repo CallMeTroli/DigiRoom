@@ -147,3 +147,52 @@ public struct MoodleWarningDTO: Codable {
     public let warningcode: String?
     public let message: String?
 }
+
+// MARK: - Moodle Chat / Messaging DTOs (core_message_*)
+public struct MoodleConversationsResponse: Codable {
+    public let conversations: [MoodleConversationDTO]?
+}
+
+public struct MoodleConversationDTO: Codable {
+    public let id: Int
+    public let name: String?
+    public let subname: String?
+    public let imageurl: String?
+    public let type: Int? // 1: Individual, 2: Group, 3: Self
+    public let membercount: Int?
+    public let isread: Bool?
+    public let unreadcount: Int?
+    public let members: [MoodleConversationMemberDTO]?
+    public let messages: [MoodleConversationMessageDTO]?
+}
+
+public struct MoodleConversationMemberDTO: Codable {
+    public let id: Int
+    public let fullname: String?
+    public let profileimageurl: String?
+    public let isonline: Bool?
+}
+
+public struct MoodleConversationMessageDTO: Codable {
+    public let id: Int
+    public let useridfrom: Int?
+    public let text: String?
+    public let timecreated: Int?
+}
+
+public struct MoodleConversationMessagesResponse: Codable {
+    public let id: Int?
+    public let members: [MoodleConversationMemberDTO]?
+    public let messages: [MoodleConversationMessageDTO]?
+}
+
+public struct MoodleSentMessageDTO: Codable {
+    public let id: Int?
+    public let msgid: Int?
+    public let useridfrom: Int?
+    public let text: String?
+    public let timecreated: Int?
+    public let conversationid: Int?
+    public let errormessage: String?
+}
+

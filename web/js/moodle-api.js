@@ -69,6 +69,32 @@ export class MoodleAPI {
     return this.callService("mod_assign_get_assignments", token, params);
   }
 
+  async getConversations(token, userId) {
+    return this.callService("core_message_get_conversations", token, {
+      userid: userId,
+      limitfrom: 0,
+      limitnum: 50
+    });
+  }
+
+  async getConversationMessages(token, userId, conversationId) {
+    return this.callService("core_message_get_conversation_messages", token, {
+      currentuserid: userId,
+      convid: conversationId,
+      limitfrom: 0,
+      limitnum: 50,
+      newest: 1
+    });
+  }
+
+  async sendMessageToConversation(token, conversationId, text) {
+    return this.callService("core_message_send_messages_to_conversation", token, {
+      conversationid: conversationId,
+      "messages[0][text]": text,
+      "messages[0][textformat]": 1
+    });
+  }
+
   async callService(wsfunction, token, params = {}) {
     const url = `${this.baseUrl}/webservice/rest/server.php`;
     const formParams = new URLSearchParams({

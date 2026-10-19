@@ -1,0 +1,12 @@
+{
+  "/Users/troli/Desktop/DigiMoodle/DigiRoom/Sources/Models/Announcement.swift" : {
+    "abi-baseline-json" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle.abi.json",
+    "const-values" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.swiftconstvalues",
+    "dependencies" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.d",
+    "diagnostics" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-primary.dia",
+    "objc-header" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle-Swift.h",
+    "swiftdoc" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle.swiftdoc",
+    "swiftmodule" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle.swiftmodule",
+    "swiftsourceinfo" : "/Users/troli/Desktop/DigiMoodle/DigiRoom/compilado/Build/Intermediates.noindex/DigiMoodle.build/Release-iphoneos/DigiMoodle.build/Objects-normal/arm64/DigiMoodle.swiftsourceinfo"
+  }
+}

@@ -5,8 +5,10 @@ public struct ClassroomTopBar: View {
     public let title: String
     public let subtitle: String?
     public let showBackButton: Bool
+    public let unreadChatCount: Int
     public let onMenuTapped: () -> Void
     public let onBackTapped: () -> Void
+    public let onChatTapped: (() -> Void)?
     public let onAvatarTapped: () -> Void
 
     public init(
@@ -14,16 +16,20 @@ public struct ClassroomTopBar: View {
         title: String = "Google Classroom",
         subtitle: String? = nil,
         showBackButton: Bool = false,
+        unreadChatCount: Int = 0,
         onMenuTapped: @escaping () -> Void = {},
         onBackTapped: @escaping () -> Void = {},
+        onChatTapped: (() -> Void)? = nil,
         onAvatarTapped: @escaping () -> Void = {}
     ) {
         self.user = user
         self.title = title
         self.subtitle = subtitle
         self.showBackButton = showBackButton
+        self.unreadChatCount = unreadChatCount
         self.onMenuTapped = onMenuTapped
         self.onBackTapped = onBackTapped
+        self.onChatTapped = onChatTapped
         self.onAvatarTapped = onAvatarTapped
     }
 
@@ -68,6 +74,28 @@ public struct ClassroomTopBar: View {
 
             Spacer()
 
+            if let onChatTapped = onChatTapped {
+                Button(action: onChatTapped) {
+                    ZStack(alignment: .topTrailing) {
+                        Image(systemName: "bubble.left.and.bubble.right")
+                            .font(.system(size: 19, weight: .medium))
+                            .foregroundColor(GoogleClassroomTheme.textPrimary)
+                            .frame(width: 38, height: 38)
+
+                        if unreadChatCount > 0 {
+                            Text("\(unreadChatCount)")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 5)
+                                .padding(.vertical, 1.5)
+                                .background(GoogleClassroomTheme.blue)
+                                .clipShape(Capsule())
+                                .offset(x: 4, y: 2)
+                        }
+                    }
+                }
+            }
+
             Button(action: onAvatarTapped) {
                 UserAvatarView(user: user, size: 34)
             }
@@ -83,3 +111,4 @@ public struct ClassroomTopBar: View {
         )
     }
 }
+

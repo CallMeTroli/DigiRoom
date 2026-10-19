@@ -34,6 +34,10 @@
           <span class="app-title">Google Classroom</span>
         </div>
 
+        <button class="icon-btn" id="btn-top-chat" aria-label="Chats de Moodle" style="position: relative; margin-right: 4px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </button>
+
         <div class="user-avatar" id="btn-avatar">Á</div>
       </header>
 
@@ -59,6 +63,14 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
         <span class="app-title" style="flex:1;">Tareas pendientes</span>
+      </header>
+
+      <!-- App Header: Moodle Chats View -->
+      <header class="app-top-bar" id="chats-top-bar" style="display: none;">
+        <button class="icon-btn" id="btn-back-chats" aria-label="Volver">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <span class="app-title" id="chats-header-title" style="flex:1;">Chats de Moodle</span>
       </header>
 
       <!-- App Header: Notifications View -->
@@ -124,7 +136,6 @@
         <!-- VIEW: Courses Stream -->
         <section class="view-section" id="view-courses" style="display: none;">
           <div class="courses-feed" id="courses-list"></div>
-          <button class="fab" id="fab-add" aria-label="Añadir">+</button>
         </section>
 
         <!-- VIEW: Course Detail -->
@@ -178,6 +189,11 @@
           <div id="todo-items-list" style="background: white; min-height: 300px;"></div>
         </section>
 
+        <!-- VIEW: Moodle Chats -->
+        <section class="view-section" id="view-chats" style="display: none;">
+          <div id="chats-body"></div>
+        </section>
+
         <!-- VIEW: Notifications Settings -->
         <section class="view-section" id="view-notifications" style="display: none; padding: 16px;">
           <div id="notif-settings-body"></div>
@@ -220,6 +236,10 @@
           <button class="drawer-item" id="nav-todo">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
             <span>Tareas pendientes</span>
+          </button>
+          <button class="drawer-item" id="nav-chats">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <span>Chats de Moodle</span>
           </button>
           <button class="drawer-item" id="nav-notifications">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>

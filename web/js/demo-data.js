@@ -189,3 +189,52 @@ export const DEMO_TOPICS = {
   4: ["Bloque I: Arquitectura ERP", "Bloque II: Personalización Odoo"],
   5: ["Tema 1: Idea y Canvas", "Tema 2: Plan Financiero"]
 };
+
+export const DEMO_CONVERSATIONS = [
+  {
+    id: 801,
+    name: "Prof. Alejandro Ruiz",
+    subtitle: "Programación Multimedia y Dispositivos Móviles",
+    initials: "AR",
+    themeColor: "#1A73E8",
+    isGroup: false,
+    isOnline: true,
+    unreadCount: 2,
+    messages: [
+      { id: 9001, senderName: "Prof. Alejandro Ruiz", text: "¡Hola Álex! ¿Cómo llevas la integración con la API REST de Moodle para la Práctica 3?", time: "10:15", isFromCurrentUser: false },
+      { id: 9002, senderName: "Tú", text: "¡Hola profesor! Ya tengo funcionando el login con token y las notificaciones a medida.", time: "10:22", isFromCurrentUser: true },
+      { id: 9003, senderName: "Prof. Alejandro Ruiz", text: "¡Excelente! Recuerda incluir también la vista de mensajería de Moodle (core_message).", time: "10:40", isFromCurrentUser: false },
+      { id: 9004, senderName: "Prof. Alejandro Ruiz", text: "Cualquier duda con el certificado de Xcode me comentas por aquí.", time: "10:42", isFromCurrentUser: false }
+    ]
+  },
+  {
+    id: 802,
+    name: "Grupo DAM 2º - Proyecto Integrado",
+    subtitle: "Grupo del curso (24 miembros)",
+    initials: "G2",
+    themeColor: "#137333",
+    isGroup: true,
+    isOnline: true,
+    unreadCount: 1,
+    messages: [
+      { id: 9010, senderName: "Elena Cano", text: "Chicos, ¿a qué hora cerraba el Sprint 2 de Desarrollo de Interfaces?", time: "09:10", isFromCurrentUser: false },
+      { id: 9011, senderName: "Tú", text: "Cierra mañana, me acaba de saltar la notificación en DigiRoom.", time: "09:15", isFromCurrentUser: true },
+      { id: 9012, senderName: "Marcos Torres", text: "¡Genial! Acabo de subir la parte de los componentes Material Design al repositorio.", time: "09:50", isFromCurrentUser: false }
+    ]
+  },
+  {
+    id: 803,
+    name: "Profª. Laura Gómez",
+    subtitle: "Desarrollo de Interfaces (DAM 2º)",
+    initials: "LG",
+    themeColor: "#E37400",
+    isGroup: false,
+    isOnline: false,
+    unreadCount: 0,
+    messages: [
+      { id: 9020, senderName: "Profª. Laura Gómez", text: "Hola Álex, he revisado tu boceto del menú lateral estilo Classroom y cumple genial con las guías de usabilidad.", time: "Ayer", isFromCurrentUser: false },
+      { id: 9021, senderName: "Tú", text: "¡Muchas gracias Laura! Mañana subo la versión final.", time: "Ayer", isFromCurrentUser: true }
+    ]
+  }
+];
+
