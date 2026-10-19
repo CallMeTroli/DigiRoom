@@ -34,15 +34,27 @@ public final class NotificationViewModel: ObservableObject {
         }
     }
 
-    public func updateOffset(days: Int, hours: Int = 0) {
+    public func updateOffset(days: Int, hours: Int = 0, isCustom: Bool = false) {
         setting.daysBefore = days
         setting.hoursBefore = hours
+        setting.isCustomOffset = isCustom
+        saveAndApply()
+    }
+
+    public func setCustomMode(_ isCustom: Bool) {
+        setting.isCustomOffset = isCustom
         saveAndApply()
     }
 
     public func updatePreferredTime(hour: Int, minute: Int) {
         setting.preferredHourOfDay = hour
         setting.preferredMinuteOfDay = minute
+        setting.notifyAtExactOffset = false
+        saveAndApply()
+    }
+
+    public func updateNotifyAtExactOffset(_ exact: Bool) {
+        setting.notifyAtExactOffset = exact
         saveAndApply()
     }
 
@@ -61,8 +73,11 @@ public final class NotificationViewModel: ObservableObject {
         saveAndApply()
     }
 
-    public func sendTestNotification() async {
-        let success = await notificationManager.sendTestNotification(setting: setting)
+    public func sendTestNotification(sampleAssignment: Assignment? = nil) async {
+        let success = await notificationManager.sendTestNotification(
+            setting: setting,
+            sampleAssignment: sampleAssignment
+        )
         if success {
             showTestSuccessAlert = true
             await updatePendingCount()

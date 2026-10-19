@@ -120,4 +120,29 @@ public struct Assignment: Identifiable, Codable, Equatable {
             return "Fecha de entrega: " + formatter.string(from: due)
         }
     }
+
+    /// Title formatted for notification: "Entrega [clase]"
+    public var notificationTitle: String {
+        let trimmedCourse = courseName.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmedCourse.isEmpty ? "Entrega Classroom" : "Entrega \(trimmedCourse)"
+    }
+
+    /// Body formatted for notification: "[dia de la semana que se entrega] [hora de entrega] - [nombre la tarea]"
+    public var notificationBody: String {
+        guard let due = dueDate else {
+            return name
+        }
+        let dayFormatter = DateFormatter()
+        dayFormatter.locale = Locale(identifier: "es_ES")
+        dayFormatter.dateFormat = "EEEE"
+        let rawDay = dayFormatter.string(from: due)
+        let capitalizedDay = rawDay.prefix(1).uppercased() + rawDay.dropFirst()
+
+        let timeFormatter = DateFormatter()
+        timeFormatter.locale = Locale(identifier: "es_ES")
+        timeFormatter.dateFormat = "HH:mm"
+        let timeStr = timeFormatter.string(from: due)
+
+        return "\(capitalizedDay) \(timeStr) - \(name)"
+    }
 }

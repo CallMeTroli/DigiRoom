@@ -505,6 +505,9 @@ class App {
     if (!container) return;
 
     const s = this.notifications.setting;
+    const sampleTask = this.courses[0]?.assignmentsDueSoon?.[0] || null;
+    const preview = this.notifications.formatNotificationForTask(sampleTask);
+    const daysText = `${s.daysBefore} ${s.daysBefore === 1 ? "día" : "días"}`;
 
     container.innerHTML = `
       <div class="settings-section">
@@ -521,7 +524,7 @@ class App {
         <div style="font-weight: 700; font-size: 15px; margin-bottom: 4px;">¿Con cuánta antelación quieres el aviso?</div>
         <div style="font-size: 13px; color: var(--gc-text-secondary); margin-bottom: 14px;">Ajusta el recordatorio a tu medida:</div>
 
-        <div class="preset-card ${s.daysBefore === 2 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(2, 0)">
+        <div class="preset-card ${!s.isCustomOffset && s.daysBefore === 2 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(2, 0, false)">
           <div class="preset-radio"></div>
           <div>
             <div style="font-weight: 600; font-size: 14px;">2 días antes (Recomendado)</div>
@@ -529,7 +532,7 @@ class App {
           </div>
         </div>
 
-        <div class="preset-card ${s.daysBefore === 1 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(1, 0)">
+        <div class="preset-card ${!s.isCustomOffset && s.daysBefore === 1 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(1, 0, false)">
           <div class="preset-radio"></div>
           <div>
             <div style="font-weight: 600; font-size: 14px;">1 día antes</div>
@@ -537,7 +540,7 @@ class App {
           </div>
         </div>
 
-        <div class="preset-card ${s.daysBefore === 3 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(3, 0)">
+        <div class="preset-card ${!s.isCustomOffset && s.daysBefore === 3 && s.hoursBefore === 0 ? "selected" : ""}" onclick="window.app.setNotifOffset(3, 0, false)">
           <div class="preset-radio"></div>
           <div>
             <div style="font-weight: 600; font-size: 14px;">3 días antes</div>
@@ -545,22 +548,72 @@ class App {
           </div>
         </div>
 
-        <div class="preset-card ${s.daysBefore !== 1 && s.daysBefore !== 2 && s.daysBefore !== 3 ? "selected" : ""}" onclick="window.app.setNotifOffset(4, 0)">
+        <div class="preset-card ${s.isCustomOffset ? "selected" : ""}" onclick="window.app.openCustomOffset()">
           <div class="preset-radio"></div>
           <div>
             <div style="font-weight: 600; font-size: 14px;">A mi medida (Personalizado)</div>
-            <div style="font-size: 12px; color: var(--gc-text-secondary);">Elige el número de días que desees</div>
+            <div style="font-size: 12px; color: var(--gc-text-secondary);">Pulsa para elegir con cuántos días de antelación quieres el aviso</div>
           </div>
         </div>
+
+        ${s.isCustomOffset ? `
+          <div style="margin-top: 12px; padding: 12px; background: rgba(232, 240, 254, 0.5); border-radius: 8px; border: 1px solid var(--gc-card-border);">
+            <div style="font-weight: 600; font-size: 13px; color: var(--gc-blue); margin-bottom: 10px;">
+              ¿Con cuántos días de antelación quieres que te notifique?
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 13px; font-weight: 500;">Días de antelación:</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="custom-days-input" min="1" max="30" value="${s.daysBefore}" style="width: 64px; padding: 6px; border: 1px solid var(--gc-card-border); border-radius: 6px; text-align: center; font-weight: 600;">
+                <span style="font-size: 13px;">días</span>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 13px; font-weight: 500;">Horas adicionales:</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <input type="number" id="custom-hours-input" min="0" max="23" value="${s.hoursBefore}" style="width: 64px; padding: 6px; border: 1px solid var(--gc-card-border); border-radius: 6px; text-align: center; font-weight: 600;">
+                <span style="font-size: 13px;">h</span>
+              </div>
+            </div>
+          </div>
+        ` : ""}
       </div>
 
       <div class="settings-section">
-        <div style="font-weight: 700; font-size: 15px; margin-bottom: 6px;">Hora del recordatorio</div>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 14px;">Hora de llegada del aviso:</span>
-          <select id="notif-hour-select" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--gc-card-border); font-size: 14px;">
-            ${[8, 9, 10, 14, 18, 20, 22].map(h => `<option value="${h}" ${s.preferredHour === h ? "selected" : ""}>${String(h).padStart(2, '0')}:00</option>`).join("")}
-          </select>
+        <div style="font-weight: 700; font-size: 15px; margin-bottom: 4px;">Hora preferida del aviso</div>
+        <div style="font-size: 13px; color: var(--gc-text-secondary); margin-bottom: 12px;">Elige si prefieres que te avise a la misma hora a la que cierra la tarea o a una hora fija:</div>
+
+        <div class="preset-card ${s.notifyAtExactOffset ? "selected" : ""}" onclick="window.app.setExactOffsetMode(true)">
+          <div class="preset-radio"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Exactamente cuando quedan ${daysText} (misma hora de cierre)</div>
+            <div style="font-size: 12px; color: var(--gc-text-secondary);">Ej: Si una tarea cierra el jueves a las 16:00, el aviso llegará a las 16:00 de los días determinados antes</div>
+          </div>
+        </div>
+
+        <div class="preset-card ${!s.notifyAtExactOffset ? "selected" : ""}" onclick="window.app.setExactOffsetMode(false)">
+          <div class="preset-radio"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">A una hora fija del día</div>
+            <div style="font-size: 12px; color: var(--gc-text-secondary);">Recibe el aviso a la hora concreta que elijas (ej. 09:00)</div>
+          </div>
+        </div>
+
+        ${!s.notifyAtExactOffset ? `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--gc-divider);">
+            <span style="font-size: 14px; font-weight: 500;">Hora fija del aviso:</span>
+            <select id="notif-hour-select" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--gc-card-border); font-size: 14px;">
+              ${Array.from({ length: 24 }, (_, h) => `<option value="${h}" ${s.preferredHour === h ? "selected" : ""}>${String(h).padStart(2, '0')}:00</option>`).join("")}
+            </select>
+          </div>
+        ` : ""}
+      </div>
+
+      <div class="settings-section">
+        <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Vista previa de la notificación</div>
+        <div style="background: var(--gc-secondary-bg); border: 1px solid var(--gc-card-border); border-radius: 10px; padding: 12px;">
+          <div style="font-weight: 700; font-size: 13px; color: var(--gc-text-primary); margin-bottom: 3px;">${preview.title}</div>
+          <div style="font-size: 13px; color: var(--gc-text-secondary);">${preview.body}</div>
         </div>
       </div>
 
@@ -581,7 +634,7 @@ class App {
         Probar notificación ahora
       </button>
       <div style="text-align: center; font-size: 12px; color: var(--gc-text-secondary); margin-top: 8px;">
-        Configuración activa: ${this.notifications.getHumanDescription()} a las ${String(s.preferredHour).padStart(2, '0')}:00
+        Configuración activa: ${this.notifications.getHumanDescription()}, ${this.notifications.getTimePreferenceDescription()}
       </div>
     `;
 
@@ -595,12 +648,38 @@ class App {
       this.notifications.setPreferredHour(parseInt(e.target.value));
       this.renderNotificationSettings();
     });
+
+    document.getElementById("custom-days-input")?.addEventListener("change", (e) => {
+      const val = Math.max(1, Math.min(30, parseInt(e.target.value) || 1));
+      this.notifications.setOffset(val, this.notifications.setting.hoursBefore, true);
+      this.renderNotificationSettings();
+      this.showToast(`Ajuste guardado: ${this.notifications.getHumanDescription()}`);
+    });
+
+    document.getElementById("custom-hours-input")?.addEventListener("change", (e) => {
+      const val = Math.max(0, Math.min(23, parseInt(e.target.value) || 0));
+      this.notifications.setOffset(this.notifications.setting.daysBefore, val, true);
+      this.renderNotificationSettings();
+      this.showToast(`Ajuste guardado: ${this.notifications.getHumanDescription()}`);
+    });
   }
 
-  setNotifOffset(days, hours) {
-    this.notifications.setOffset(days, hours);
+  openCustomOffset() {
+    const currentDays = this.notifications.setting.daysBefore || 4;
+    this.notifications.setOffset(currentDays, this.notifications.setting.hoursBefore || 0, true);
+    this.renderNotificationSettings();
+  }
+
+  setNotifOffset(days, hours, isCustom = false) {
+    this.notifications.setOffset(days, hours, isCustom);
     this.renderNotificationSettings();
     this.showToast(`Ajuste guardado: ${this.notifications.getHumanDescription()}`);
+  }
+
+  setExactOffsetMode(exact) {
+    this.notifications.setNotifyAtExactOffset(exact);
+    this.renderNotificationSettings();
+    this.showToast(`Hora del aviso: ${this.notifications.getTimePreferenceDescription()}`);
   }
 
   toggleCourseNotif(courseId, enabled) {
@@ -608,8 +687,10 @@ class App {
   }
 
   async triggerTestNotification() {
-    const success = await this.notifications.sendTestNotification();
-    this.showToast(success ? "¡Notificación de prueba enviada con éxito!" : "Permiso de notificación mostrado.");
+    const sampleTask = this.courses[0]?.assignmentsDueSoon?.[0] || null;
+    const preview = this.notifications.formatNotificationForTask(sampleTask);
+    const success = await this.notifications.sendTestNotification(sampleTask);
+    this.showToast(success ? `${preview.title} · ${preview.body}` : `${preview.title} — ${preview.body}`);
   }
 
   showProfileModal() {

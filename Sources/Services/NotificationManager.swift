@@ -46,10 +46,11 @@ public final class NotificationManager: NSObject, UNUserNotificationCenterDelega
             guard let reminderDate = setting.triggerDate(for: dueDate) else { continue }
 
             let content = UNMutableNotificationContent()
-            content.title = "Recordatorio de entrega"
-            let courseTag = assignment.courseName.isEmpty ? "Google Classroom" : assignment.courseName
-            content.subtitle = courseTag
-            content.body = "La tarea '\(assignment.name)' vence en \(setting.humanDescription) (\(assignment.formattedDueDate))."
+            // Optimized format:
+            // Entrega [clase]
+            // [dia de la semana que se entrega] [hora de entrega] - [nombre la tarea]
+            content.title = assignment.notificationTitle
+            content.body = assignment.notificationBody
             content.sound = setting.soundEnabled ? .default : nil
             content.badge = 1
             content.userInfo = [
@@ -78,7 +79,10 @@ public final class NotificationManager: NSObject, UNUserNotificationCenterDelega
     }
 
     // MARK: - Test Notification
-    public func sendTestNotification(setting: NotificationSetting) async -> Bool {
+    public func sendTestNotification(
+        setting: NotificationSetting,
+        sampleAssignment: Assignment? = nil
+    ) async -> Bool {
         let status = await checkAuthorizationStatus()
         if status == .notDetermined {
             let granted = await requestAuthorization()
@@ -88,9 +92,13 @@ public final class NotificationManager: NSObject, UNUserNotificationCenterDelega
         }
 
         let content = UNMutableNotificationContent()
-        content.title = "DigiMoodle · Recordatorio"
-        content.subtitle = "Desarrollo Web en Entorno Cliente"
-        content.body = "¡Ajuste aplicado! Notificación configurada para '\(setting.humanDescription)' a las \(String(format: "%02d:%02d", setting.preferredHourOfDay, setting.preferredMinuteOfDay))."
+        if let sample = sampleAssignment, sample.dueDate != nil {
+            content.title = sample.notificationTitle
+            content.body = sample.notificationBody
+        } else {
+            content.title = "Entrega Programación Multimedia y Dispositivos Móviles"
+            content.body = "Jueves 16:00 - Práctica 3: Interfaz iOS compatible con Google Classroom"
+        }
         content.sound = setting.soundEnabled ? .default : nil
         content.badge = 1
 
