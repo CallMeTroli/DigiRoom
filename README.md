@@ -137,5 +137,5 @@ Este proyecto está distribuido bajo la licencia [MIT](LICENSE).
 ---
 
 <div align="center">
-  <sub>Desarrollado con ❤️ para la comunidad de alumnos de <b>Digitech FP</b>.</sub>
+  <sub>Desarrollado por <b>Troli</b> con la ayuda de <b>Gemini</b>.</sub>
 </div>
