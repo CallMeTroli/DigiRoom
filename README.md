@@ -1,11 +1,11 @@
 <div align="center">
   <img src="imagedigiroom.png" alt="DigiRoom Logo" width="110" style="border-radius: 22px; margin-bottom: 8px;" />
   <h1>DigiRoom · DigiMoodle</h1>
-  <p><b>Cliente para iOS y Web del Campus Virtual de Digitech FP con la experiencia limpia e intuitiva de Google Classroom.</b></p>
+  <p><b>Cliente nativo para iOS del Campus Virtual de Digitech FP con la experiencia limpia e intuitiva de Google Classroom.</b></p>
 
   <p>
     <a href="https://campus.digitechfp.com"><img src="https://img.shields.io/badge/Campus-campus.digitechfp.com-007B83?style=flat-square&logo=moodle&logoColor=white" alt="Campus Digitech FP"></a>
-    <img src="https://img.shields.io/badge/Plataforma-iOS%2016.0%2B%20%7C%20Web-1A73E8?style=flat-square&logo=apple&logoColor=white" alt="Plataforma">
+    <img src="https://img.shields.io/badge/Plataforma-iOS%2016.0%2B-1A73E8?style=flat-square&logo=apple&logoColor=white" alt="Plataforma">
     <img src="https://img.shields.io/badge/Swift-5.9%2B-FA7343?style=flat-square&logo=swift&logoColor=white" alt="Swift">
     <img src="https://img.shields.io/badge/UI-SwiftUI-137333?style=flat-square" alt="SwiftUI">
     <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square" alt="Build Status">
@@ -19,7 +19,7 @@
 
 **DigiRoom** (también conocido como *DigiMoodle*) nace para resolver una necesidad común de los alumnos de **Digitech FP**: disfrutar de la velocidad, claridad y elegancia de la interfaz de **Google Classroom**, pero con conexión directa a los cursos, tareas y chats del campus virtual basado en **Moodle** ([campus.digitechfp.com](https://campus.digitechfp.com)).
 
-Desarrollada de forma nativa en **SwiftUI** para iPhone e iPad (con un simulador web complementario), la app permite consultar entregas, revisar avisos, charlar con profesores y configurar alertas de tareas a tu medida.
+Desarrollada de forma nativa en **SwiftUI** para iPhone e iPad, la app permite consultar entregas, revisar avisos, charlar con profesores y configurar alertas de tareas a tu medida.
 
 ---
 
@@ -61,11 +61,11 @@ Desarrollada de forma nativa en **SwiftUI** para iPhone e iPad (con un simulador
 
 ## 🚀 Cómo Empezar
 
-### Opción 1: Abrir en Xcode (Nativo iOS)
+### 📱 Abrir y Ejecutar en Xcode
 
 1. **Clona o descarga el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/DigiMoodle.git
+   git clone https://github.com/CallMeTroli/DigiMoodle.git
    cd DigiMoodle/DigiRoom
    ```
 2. **Abre el proyecto**:
@@ -85,19 +85,6 @@ Desarrollada de forma nativa en **SwiftUI** para iPhone e iPad (con un simulador
 
 ---
 
-### Opción 2: Probar el Simulador Web
-
-Si quieres probar la interfaz rápidamente en cualquier ordenador o navegador sin necesidad de tener Xcode instalado:
-
-```bash
-cd DigiRoom/web
-python3 -m http.server 8080
-```
-Abre en tu navegador:  
-👉 **[http://localhost:8080](http://localhost:8080)**
-
----
-
 ## 🛠️ Tecnologías y Arquitectura
 
 Un resumen de la tecnología utilizada:
@@ -108,7 +95,6 @@ Un resumen de la tecnología utilizada:
 | **Arquitectura** | MVVM (`ObservableObject`, `@Published`) | Separación clara entre modelos de datos, servicios de red y vistas. |
 | **Alertas Locales** | `UserNotifications` (`UNUserNotificationCenter`) | Programación precisa de recordatorios locales según fechas límite. |
 | **Backend Campus** | Moodle Web Services REST API v2 | Conexión con endpoints oficiales de `campus.digitechfp.com` (tokens, cursos, entregas y mensajería). |
-| **Web Companion** | HTML5, CSS Material 3, Vanilla JS (ES Modules) | Entorno ligero de prueba en navegador con marco de iPhone. |
 
 ---
 
@@ -130,7 +116,6 @@ DigiRoom/
 │   │   ├── Notifications/   # Pantalla de ajustes de notificaciones
 │   │   └── Common/          # TopBar, SideDrawer y paleta de colores
 │   └── Resources/           # Assets, iconos de la app y Info.plist
-├── web/                     # Simulador web interactivo (PWA ready)
 └── imagedigiroom.png        # Icono oficial de DigiRoom
 ```
 
